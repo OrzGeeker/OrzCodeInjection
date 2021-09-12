@@ -15,14 +15,18 @@
 		E26AF33C26EE448300B754FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26AF33A26EE448300B754FD /* LaunchScreen.storyboard */; };
 		E26AF33F26EE448300B754FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33E26EE448300B754FD /* main.m */; };
 		E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF35A26EE63EE00B754FD /* OrzHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E26AF35F26EE63EE00B754FD /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; };
-		E26AF36026EE63EE00B754FD /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */; };
 		E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */; };
+		E26AF38726EE7E5000B754FD /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; };
+		E26AF38826EE7E5000B754FD /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E26AF39026EE7EA300B754FD /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37D26EE7BDE00B754FD /* FLEX.framework */; };
+		E26AF39126EE7EA300B754FD /* FLEX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37D26EE7BDE00B754FD /* FLEX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E26AF39226EE7EA300B754FD /* LookinServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37E26EE7BDE00B754FD /* LookinServer.framework */; };
+		E26AF39326EE7EA300B754FD /* LookinServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37E26EE7BDE00B754FD /* LookinServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E26AF35D26EE63EE00B754FD /* PBXContainerItemProxy */ = {
+		E26AF38926EE7E5000B754FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E26AF32126EE448100B754FD /* Project object */;
 			proxyType = 1;
@@ -32,13 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E26AF36426EE63EE00B754FD /* Embed Frameworks */ = {
+		E26AF38B26EE7E5100B754FD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E26AF36026EE63EE00B754FD /* OrzHook.framework in Embed Frameworks */,
+				E26AF38826EE7E5000B754FD /* OrzHook.framework in Embed Frameworks */,
+				E26AF39326EE7EA300B754FD /* LookinServer.framework in Embed Frameworks */,
+				E26AF39126EE7EA300B754FD /* FLEX.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26AF35F26EE63EE00B754FD /* OrzHook.framework in Frameworks */,
+				E26AF38726EE7E5000B754FD /* OrzHook.framework in Frameworks */,
+				E26AF39226EE7EA300B754FD /* LookinServer.framework in Frameworks */,
+				E26AF39026EE7EA300B754FD /* FLEX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +105,7 @@
 				E26AF35926EE63EE00B754FD /* OrzHook */,
 				E26AF32B26EE448200B754FD /* OrzInjection */,
 				E26AF32A26EE448200B754FD /* Products */,
+				E26AF38626EE7E5000B754FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +164,13 @@
 			path = "APP-decrypted";
 			sourceTree = "<group>";
 		};
+		E26AF38626EE7E5000B754FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -178,12 +194,12 @@
 				E26AF32626EE448200B754FD /* Frameworks */,
 				E26AF32726EE448200B754FD /* Resources */,
 				E26AF34526EE453500B754FD /* App Code Sign Script */,
-				E26AF36426EE63EE00B754FD /* Embed Frameworks */,
+				E26AF38B26EE7E5100B754FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E26AF35E26EE63EE00B754FD /* PBXTargetDependency */,
+				E26AF38A26EE7E5000B754FD /* PBXTargetDependency */,
 			);
 			name = OrzInjection;
 			productName = OrzInjection;
@@ -307,10 +323,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E26AF35E26EE63EE00B754FD /* PBXTargetDependency */ = {
+		E26AF38A26EE7E5000B754FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E26AF35726EE63EE00B754FD /* OrzHook */;
-			targetProxy = E26AF35D26EE63EE00B754FD /* PBXContainerItemProxy */;
+			targetProxy = E26AF38926EE7E5000B754FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -385,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -438,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -455,16 +471,17 @@
 				DEVELOPMENT_TEAM = 6UF48V8A6H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks-inject",
 				);
 				INFOPLIST_FILE = OrzInjection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -477,16 +494,17 @@
 				DEVELOPMENT_TEAM = 6UF48V8A6H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks-inject",
 				);
 				INFOPLIST_FILE = OrzInjection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -500,12 +518,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OrzHook/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,7 +530,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzHook;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -530,12 +547,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OrzHook/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,7 +559,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzHook;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

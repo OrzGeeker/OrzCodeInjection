@@ -4,7 +4,7 @@
 # ${SRCROOT} 为工程文件所在的目录
 TEMP_PATH="${SRCROOT}/Temp"
 #资源文件夹,放三方APP的
-ASSETS_PATH="${SRCROOT}/APP"
+ASSETS_PATH="${SRCROOT}/APP-decrypted"
 #ipa包路径
 TARGET_IPA_PATH="${ASSETS_PATH}/*.ipa"
 
@@ -76,8 +76,8 @@ fi
 
 # 注入OrzHook.framework、FLEX.framework、LookinServer.framework
 if  command -v yololib > /dev/null; then
-    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/LookinServer.framework/LookinServer"
-    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/FLEX.framework/FLEX"
+#    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/LookinServer.framework/LookinServer"
+#    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/FLEX.framework/FLEX"
     yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/OrzHook.framework/OrzHook"
 else
     echo "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
