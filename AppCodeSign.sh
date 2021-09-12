@@ -68,9 +68,9 @@ done
 fi
 
 if [ $? -eq 0 ]; then
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
     echo "✅ App Code Sign Completed ✅"
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
 fi
 
 
