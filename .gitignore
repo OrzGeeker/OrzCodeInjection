@@ -30,8 +30,8 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 .DS_Store
-IPA/
-APP/
+IPA-decrypted/
+APP-decrypted/
 Temp/
 
 # CocoaPods
