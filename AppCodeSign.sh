@@ -72,3 +72,17 @@ if [ $? -eq 0 ]; then
     echo "✅ App Code Sign Completed ✅"
     echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
 fi
+
+
+# 注入OrzHook.framework、FLEX.framework、LookinServer.framework
+if  command -v yololib > /dev/null; then
+    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/LookinServer.framework/LookinServer"
+    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/FLEX.framework/FLEX"
+    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/OrzHook.framework/OrzHook"
+else
+    echo "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+    echo "🔥 yololib not installed 🔥"
+    echo "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+fi
+
+
