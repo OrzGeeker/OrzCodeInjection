@@ -31,6 +31,8 @@ DerivedData/
 *.dSYM
 .DS_Store
 IPA/
+APP/
+Temp/
 
 # CocoaPods
 #
