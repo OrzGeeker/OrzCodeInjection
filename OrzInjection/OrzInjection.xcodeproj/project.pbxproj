@@ -19,10 +19,6 @@
 		E26AF36026EE63EE00B754FD /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */; };
 		E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */; };
-		E26AF37126EE728100B754FD /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF34A26EE5F7A00B754FD /* FLEX.framework */; };
-		E26AF37226EE728100B754FD /* FLEX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF34A26EE5F7A00B754FD /* FLEX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E26AF37A26EE77E200B754FD /* LookinServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37826EE762400B754FD /* LookinServer.framework */; };
-		E26AF37B26EE77E200B754FD /* LookinServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF37826EE762400B754FD /* LookinServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +39,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E26AF36026EE63EE00B754FD /* OrzHook.framework in Embed Frameworks */,
-				E26AF37B26EE77E200B754FD /* LookinServer.framework in Embed Frameworks */,
-				E26AF37226EE728100B754FD /* FLEX.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,15 +58,15 @@
 		E26AF33B26EE448300B754FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26AF33D26EE448300B754FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26AF33E26EE448300B754FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E26AF34726EE5B2600B754FD /* 微信8.0.13.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微信8.0.13.ipa"; sourceTree = "<group>"; };
-		E26AF34A26EE5F7A00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
 		E26AF35826EE63EE00B754FD /* OrzHook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrzHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF35A26EE63EE00B754FD /* OrzHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzHook.h; sourceTree = "<group>"; };
 		E26AF35B26EE63EE00B754FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzCodeInjection.h; sourceTree = "<group>"; };
 		E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzCodeInjection.m; sourceTree = "<group>"; };
 		E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = AppCodeSign.sh; path = ../AppCodeSign.sh; sourceTree = "<group>"; };
-		E26AF37826EE762400B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LookinServer.framework; path = ../../../../../../../Applications/Lookin.app/Contents/Resources/LookinServerFramework/LookinServer.framework; sourceTree = "<group>"; };
+		E26AF37D26EE7BDE00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
+		E26AF37E26EE7BDE00B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LookinServer.framework; sourceTree = "<group>"; };
+		E26AF38026EE7BEF00B754FD /* 微信8.0.13.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微信8.0.13.ipa"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26AF35F26EE63EE00B754FD /* OrzHook.framework in Frameworks */,
-				E26AF37A26EE77E200B754FD /* LookinServer.framework in Frameworks */,
-				E26AF37126EE728100B754FD /* FLEX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */,
-				E26AF34926EE5F7A00B754FD /* Frameworks */,
-				E26AF34626EE5B2600B754FD /* APP */,
+				E26AF37F26EE7BEF00B754FD /* APP-decrypted */,
+				E26AF37C26EE7BDE00B754FD /* Frameworks-inject */,
 				E26AF35926EE63EE00B754FD /* OrzHook */,
 				E26AF32B26EE448200B754FD /* OrzInjection */,
 				E26AF32A26EE448200B754FD /* Products */,
@@ -135,23 +127,6 @@
 			path = OrzInjection;
 			sourceTree = "<group>";
 		};
-		E26AF34626EE5B2600B754FD /* APP */ = {
-			isa = PBXGroup;
-			children = (
-				E26AF34726EE5B2600B754FD /* 微信8.0.13.ipa */,
-			);
-			path = APP;
-			sourceTree = "<group>";
-		};
-		E26AF34926EE5F7A00B754FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E26AF37826EE762400B754FD /* LookinServer.framework */,
-				E26AF34A26EE5F7A00B754FD /* FLEX.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		E26AF35926EE63EE00B754FD /* OrzHook */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +136,23 @@
 				E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */,
 			);
 			path = OrzHook;
+			sourceTree = "<group>";
+		};
+		E26AF37C26EE7BDE00B754FD /* Frameworks-inject */ = {
+			isa = PBXGroup;
+			children = (
+				E26AF37D26EE7BDE00B754FD /* FLEX.framework */,
+				E26AF37E26EE7BDE00B754FD /* LookinServer.framework */,
+			);
+			path = "Frameworks-inject";
+			sourceTree = "<group>";
+		};
+		E26AF37F26EE7BEF00B754FD /* APP-decrypted */ = {
+			isa = PBXGroup;
+			children = (
+				E26AF38026EE7BEF00B754FD /* 微信8.0.13.ipa */,
+			);
+			path = "APP-decrypted";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
