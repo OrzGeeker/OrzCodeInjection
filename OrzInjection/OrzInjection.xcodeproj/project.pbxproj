@@ -29,6 +29,7 @@
 		E26AF33B26EE448300B754FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26AF33D26EE448300B754FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26AF33E26EE448300B754FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E26AF34726EE5B2600B754FD /* 微信8.0.13.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微信8.0.13.ipa"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
+				E26AF34626EE5B2600B754FD /* APP */,
 				E26AF32B26EE448200B754FD /* OrzInjection */,
 				E26AF32A26EE448200B754FD /* Products */,
 			);
@@ -76,6 +78,14 @@
 			path = OrzInjection;
 			sourceTree = "<group>";
 		};
+		E26AF34626EE5B2600B754FD /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				E26AF34726EE5B2600B754FD /* 微信8.0.13.ipa */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,7 +96,7 @@
 				E26AF32526EE448200B754FD /* Sources */,
 				E26AF32626EE448200B754FD /* Frameworks */,
 				E26AF32726EE448200B754FD /* Resources */,
-				E26AF34526EE453500B754FD /* ShellScript */,
+				E26AF34526EE453500B754FD /* App Code Sign Script */,
 			);
 			buildRules = (
 			);
@@ -142,7 +152,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E26AF34526EE453500B754FD /* ShellScript */ = {
+		E26AF34526EE453500B754FD /* App Code Sign Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,13 +161,14 @@
 			);
 			inputPaths = (
 			);
+			name = "App Code Sign Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n../AppCodeSign.sh\n";
+			shellScript = "../AppCodeSign.sh \n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
