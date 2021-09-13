@@ -19,7 +19,7 @@ cryptid 1
 
 ### 直接获取砸过壳的应用
 
-1. (付费下载)https://www.dumpapp.com/
+1. [付费下载](https://www.dumpapp.com/)
 2. 
 ### 自己手动砸壳应用(需要有越获经验)
 #### [dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git)
