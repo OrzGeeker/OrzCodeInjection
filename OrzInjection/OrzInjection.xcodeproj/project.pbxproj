@@ -52,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E22C8DCC26EF0B85005BA9E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF32C26EE448200B754FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E26AF32D26EE448200B754FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
+				E22C8DCC26EF0B85005BA9E6 /* README.md */,
 				E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */,
 				E26AF37F26EE7BEF00B754FD /* APP-decrypted */,
 				E26AF37C26EE7BDE00B754FD /* Frameworks-inject */,
