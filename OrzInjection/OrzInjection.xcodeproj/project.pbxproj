@@ -77,7 +77,7 @@
 		E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = AppCodeSign.sh; path = ../AppCodeSign.sh; sourceTree = "<group>"; };
 		E26AF37D26EE7BDE00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
 		E26AF37E26EE7BDE00B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LookinServer.framework; sourceTree = "<group>"; };
-		E26AF38026EE7BEF00B754FD /* 微信8.0.13.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微信8.0.13.ipa"; sourceTree = "<group>"; };
+		E2B380A726F0686B00CC1EF8 /* 贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "贝壳2.64.2.ipa"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 		E26AF37F26EE7BEF00B754FD /* APP-decrypted */ = {
 			isa = PBXGroup;
 			children = (
-				E26AF38026EE7BEF00B754FD /* 微信8.0.13.ipa */,
+				E2B380A726F0686B00CC1EF8 /* 贝壳2.64.2.ipa */,
 			);
 			path = "APP-decrypted";
 			sourceTree = "<group>";
