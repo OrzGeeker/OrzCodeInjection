@@ -22,6 +22,11 @@ cryptid 1
  - [付费脱壳服务](https://www.dumpapp.com/)
 
 ### 自己手动砸壳应用(需要有越获经验)
+
+1. 手机越狱
+
+2. 越狱手机上进行砸壳
+
 #### [dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git)
 
 ```bash
