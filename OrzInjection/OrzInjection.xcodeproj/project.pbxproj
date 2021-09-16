@@ -86,6 +86,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E212376B26F3BDA700506A34 /* ipa-dist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ipa-dist";
+			sourceTree = "<group>";
+		};
 		E22C8DCD26EF0BE2005BA9E6 /* docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +116,7 @@
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
+				E212376B26F3BDA700506A34 /* ipa-dist */,
 				E253CFA826F3A39400A61537 /* Tools */,
 				E22C8DCD26EF0BE2005BA9E6 /* docs */,
 				E22C8DCC26EF0B85005BA9E6 /* README.md */,
@@ -473,7 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 7HSS6X2323;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks-inject",
@@ -496,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 7HSS6X2323;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks-inject",

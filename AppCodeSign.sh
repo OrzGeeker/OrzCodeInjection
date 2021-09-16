@@ -99,6 +99,23 @@ fi
 
 if [ $? -eq 0 ]; then
     echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
-    echo "✅ App Code Sign Completed ✅"
+    echo "✅ App Code Sign Completed  ✅"
+    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+fi
+
+
+# --------------------------------------------
+# 创建可分发的IPA
+IPA_PRODUCT_PATH="${SRCROOT}/ipa-dist"
+IPA_PRODUCT_PAYLOAD_PATH="${IPA_PRODUCT_PATH}/Payload"
+rm -rf "${IPA_PRODUCT_PATH}"
+mkdir -p "${IPA_PRODUCT_PATH}" "${IPA_PRODUCT_PAYLOAD_PATH}"
+cp -rf "$TARGET_APP_PATH" "$IPA_PRODUCT_PAYLOAD_PATH"
+cd "$IPA_PRODUCT_PATH"
+zip -qr "${TARGET_DISPLAY_NAME}.ipa" "Payload/"
+rm -rf "$IPA_PRODUCT_PAYLOAD_PATH"
+if [ $? -eq 0 ]; then
+    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+    echo "✅      IPA Created!!       ✅"
     echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
 fi
