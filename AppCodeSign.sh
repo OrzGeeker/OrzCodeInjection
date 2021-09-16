@@ -47,6 +47,12 @@ rm -rf "$TARGET_APP_PATH/Watch"
 # 设置 "Set :KEY Value" "目标文件路径.plist"
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER" "$TARGET_APP_PATH/Info.plist"
 
+# 设置应用的名称
+DUMMY_DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print CFBundleDisplayName"  "${SRCROOT}/$TARGET_NAME/Info.plist")
+TARGET_DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print CFBundleDisplayName"  "$TARGET_APP_PATH/Info.plist")
+TARGET_DISPLAY_NAME="$DUMMY_DISPLAY_NAME$TARGET_DISPLAY_NAME"
+/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
+
 # 给可执行文件上权限
 # 找到第三方app包里的可执行文件名称，因为Info.plist的 CFBundleExecutable 对应的是可执行文件的名称
 APP_BINARY=$(/usr/libexec/PlistBuddy -c "Print CFBundleExecutable"  "${TARGET_APP_PATH}/Info.plist")
