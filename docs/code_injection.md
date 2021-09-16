@@ -10,4 +10,5 @@
 
 - [yololib手动注入](https://youtu.be/0I9hL4QlyJU)
 - [IPAPatch](https://github.com/Naituw/IPAPatch)
+- [MonkeyDev](https://github.com/AloneMonkey/MonkeyDev.git)
 
