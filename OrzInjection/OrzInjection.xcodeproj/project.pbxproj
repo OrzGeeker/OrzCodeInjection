@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E212376626F3B4A600506A34 /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; };
 		E26AF32E26EE448200B754FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF32D26EE448200B754FD /* AppDelegate.m */; };
 		E26AF33126EE448200B754FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33026EE448200B754FD /* SceneDelegate.m */; };
 		E26AF33426EE448200B754FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33326EE448200B754FD /* ViewController.m */; };
@@ -17,12 +18,10 @@
 		E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF35A26EE63EE00B754FD /* OrzHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */; };
 		E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */; };
-		E26AF38726EE7E5000B754FD /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; };
-		E26AF38826EE7E5000B754FD /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E26AF38926EE7E5000B754FD /* PBXContainerItemProxy */ = {
+		E212376826F3B4A600506A34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E26AF32126EE448100B754FD /* Project object */;
 			proxyType = 1;
@@ -31,26 +30,13 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E26AF38B26EE7E5100B754FD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E26AF38826EE7E5000B754FD /* OrzHook.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		E22C8DCC26EF0B85005BA9E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ipa_resign.md; sourceTree = "<group>"; };
 		E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = get_ipa.md; sourceTree = "<group>"; };
 		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
 		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
+		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF32C26EE448200B754FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E26AF32D26EE448200B754FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26AF38726EE7E5000B754FD /* OrzHook.framework in Frameworks */,
+				E212376626F3B4A600506A34 /* OrzHook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E212376526F3B4A600506A34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E22C8DCD26EF0BE2005BA9E6 /* docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +98,18 @@
 			path = ../docs;
 			sourceTree = "<group>";
 		};
+		E253CFA826F3A39400A61537 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E253CFA926F3A39400A61537 /* yololib */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
+				E253CFA826F3A39400A61537 /* Tools */,
 				E22C8DCD26EF0BE2005BA9E6 /* docs */,
 				E22C8DCC26EF0B85005BA9E6 /* README.md */,
 				E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */,
@@ -116,7 +118,7 @@
 				E26AF35926EE63EE00B754FD /* OrzHook */,
 				E26AF32B26EE448200B754FD /* OrzInjection */,
 				E26AF32A26EE448200B754FD /* Products */,
-				E26AF38626EE7E5000B754FD /* Frameworks */,
+				E212376526F3B4A600506A34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,13 +177,6 @@
 			path = "APP-decrypted";
 			sourceTree = "<group>";
 		};
-		E26AF38626EE7E5000B754FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -205,12 +200,11 @@
 				E26AF32626EE448200B754FD /* Frameworks */,
 				E26AF32726EE448200B754FD /* Resources */,
 				E26AF34526EE453500B754FD /* App Code Sign Script */,
-				E26AF38B26EE7E5100B754FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E26AF38A26EE7E5000B754FD /* PBXTargetDependency */,
+				E212376926F3B4A600506A34 /* PBXTargetDependency */,
 			);
 			name = OrzInjection;
 			productName = OrzInjection;
@@ -334,10 +328,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E26AF38A26EE7E5000B754FD /* PBXTargetDependency */ = {
+		E212376926F3B4A600506A34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E26AF35726EE63EE00B754FD /* OrzHook */;
-			targetProxy = E26AF38926EE7E5000B754FD /* PBXContainerItemProxy */;
+			targetProxy = E212376826F3B4A600506A34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

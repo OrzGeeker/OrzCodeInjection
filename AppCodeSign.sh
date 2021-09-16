@@ -45,23 +45,25 @@ rm -rf "$TARGET_APP_PATH/Watch"
 # -------------------------------------
 # 更新 Info.plist 里的BundleId
 # 设置 "Set :KEY Value" "目标文件路径.plist"
-/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER" "$TARGET_APP_PATH/Info.plist"
+PLIST_TOOL_BIN="/usr/libexec/PlistBuddy"
+$PLIST_TOOL_BIN -c "Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER" "$TARGET_APP_PATH/Info.plist"
 
 # 设置应用的名称
-DUMMY_DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print CFBundleDisplayName"  "${SRCROOT}/$TARGET_NAME/Info.plist")
-TARGET_DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print CFBundleDisplayName"  "$TARGET_APP_PATH/Info.plist")
+DUMMY_DISPLAY_NAME=$($PLIST_TOOL_BIN -c "Print CFBundleDisplayName"  "${SRCROOT}/$TARGET_NAME/Info.plist")
+TARGET_DISPLAY_NAME=$($PLIST_TOOL_BIN -c "Print CFBundleDisplayName"  "$TARGET_APP_PATH/Info.plist")
 TARGET_DISPLAY_NAME="$DUMMY_DISPLAY_NAME$TARGET_DISPLAY_NAME"
-/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
+$PLIST_TOOL_BIN -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
 
 # 给可执行文件上权限
 # 找到第三方app包里的可执行文件名称，因为Info.plist的 CFBundleExecutable 对应的是可执行文件的名称
-APP_BINARY=$(/usr/libexec/PlistBuddy -c "Print CFBundleExecutable"  "${TARGET_APP_PATH}/Info.plist")
+APP_BINARY=$($PLIST_TOOL_BIN -c "Print CFBundleExecutable"  "${TARGET_APP_PATH}/Info.plist")
 # 为App二进制文件加上可执行权限+X, 否则Xcode会告知无法运行
 chmod +x "$TARGET_APP_PATH/$APP_BINARY"
 
 # -------------------------------------
 # 注入Framework
-yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/OrzHook.framework/OrzHook"
+YOLOLIB_BIN="${SRCROOT}/Tools/yololib"
+
 FRAMEWORKS_TO_INJECT_PATH="${SRCROOT}/Frameworks-inject"
 TARGET_APP_FRAMEWORKS_PATH="$BUILT_PRODUCTS_DIR/$TARGET_NAME.app/Frameworks"
 for file in `ls -1 "${FRAMEWORKS_TO_INJECT_PATH}"`; do
@@ -75,8 +77,11 @@ for file in `ls -1 "${FRAMEWORKS_TO_INJECT_PATH}"`; do
     rsync -av --exclude=".*" "${FRAMEWORKS_TO_INJECT_PATH}/$file" "$TARGET_APP_FRAMEWORKS_PATH"
     filename="${file%.*}"
 
-    yololib "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/${file}/${filename}"
+    $YOLOLIB_BIN "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/${file}/${filename}"
 done
+ORZ_HOOK_FRAMEWORK_PATH="$BUILT_PRODUCTS_DIR/OrzHook.framework"
+cp -Rf $ORZ_HOOK_FRAMEWORK_PATH $TARGET_APP_FRAMEWORKS_PATH
+$YOLOLIB_BIN "$TARGET_APP_PATH/$APP_BINARY" "Frameworks/OrzHook.framework/OrzHook"
 
 # -------------------------------------
 # 6. 重签第三方app Frameworks下已存在的动态库

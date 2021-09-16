@@ -1,0 +1,3 @@
+[submodule "tools/yololib"]
+	path = tools/yololib
+	url = https://github.com/KJCracks/yololib.git
