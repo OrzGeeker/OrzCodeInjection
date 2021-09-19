@@ -1,3 +1,6 @@
 [submodule "tools/yololib"]
 	path = tools/yololib
 	url = https://github.com/KJCracks/yololib.git
+[submodule "tools/fishhook"]
+	path = tools/fishhook
+	url = https://github.com/facebook/fishhook.git
