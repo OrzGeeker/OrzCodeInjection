@@ -13,6 +13,10 @@ iOS三方应用代码注入
 
 ---
 
+## 防护与破解
+
+1. [ptrace防护与破解](./docs/ptrace_crack.md)
+
 
 
 

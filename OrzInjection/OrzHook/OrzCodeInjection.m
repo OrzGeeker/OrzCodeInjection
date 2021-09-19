@@ -7,6 +7,7 @@
 
 #import "OrzCodeInjection.h"
 #import <objc/runtime.h>
+#import "PtraceProtect.h"
 
 @implementation OrzCodeInjection
 + (void)load {
@@ -14,6 +15,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self showFLEX];
     });
+    
+    [PtraceProtect enableSimplePtraceDenyAttach];
 }
 
 + (void)showFLEX {

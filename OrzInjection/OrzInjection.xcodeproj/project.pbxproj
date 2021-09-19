@@ -18,6 +18,9 @@
 		E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF35A26EE63EE00B754FD /* OrzHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */; };
 		E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */; };
+		E2B8427B26F72503003F5528 /* PtraceHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B8427A26F72412003F5528 /* PtraceHeader.h */; };
+		E2B8427E26F727A7003F5528 /* PtraceProtect.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B8427C26F727A7003F5528 /* PtraceProtect.h */; };
+		E2B8427F26F727A7003F5528 /* PtraceProtect.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B8427D26F727A7003F5528 /* PtraceProtect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,10 @@
 		E26AF37D26EE7BDE00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
 		E26AF37E26EE7BDE00B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LookinServer.framework; sourceTree = "<group>"; };
 		E2B380A726F0686B00CC1EF8 /* 贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "贝壳2.64.2.ipa"; sourceTree = "<group>"; };
+		E2B8425826F72201003F5528 /* ptrace_crack.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ptrace_crack.md; sourceTree = "<group>"; };
+		E2B8427A26F72412003F5528 /* PtraceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PtraceHeader.h; sourceTree = "<group>"; };
+		E2B8427C26F727A7003F5528 /* PtraceProtect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PtraceProtect.h; sourceTree = "<group>"; };
+		E2B8427D26F727A7003F5528 /* PtraceProtect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PtraceProtect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,7 @@
 				E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */,
 				E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */,
 				E22C8DD126EF0BE2005BA9E6 /* code_injection.md */,
+				E2B8425826F72201003F5528 /* ptrace_crack.md */,
 			);
 			name = docs;
 			path = ../docs;
@@ -160,6 +168,7 @@
 		E26AF35926EE63EE00B754FD /* OrzHook */ = {
 			isa = PBXGroup;
 			children = (
+				E2B8427926F723FD003F5528 /* ptrace */,
 				E26AF35A26EE63EE00B754FD /* OrzHook.h */,
 				E26AF35B26EE63EE00B754FD /* Info.plist */,
 				E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */,
@@ -185,6 +194,16 @@
 			path = "APP-decrypted";
 			sourceTree = "<group>";
 		};
+		E2B8427926F723FD003F5528 /* ptrace */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8427A26F72412003F5528 /* PtraceHeader.h */,
+				E2B8427C26F727A7003F5528 /* PtraceProtect.h */,
+				E2B8427D26F727A7003F5528 /* PtraceProtect.m */,
+			);
+			path = ptrace;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -193,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */,
+				E2B8427E26F727A7003F5528 /* PtraceProtect.h in Headers */,
+				E2B8427B26F72503003F5528 /* PtraceHeader.h in Headers */,
 				E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B8427F26F727A7003F5528 /* PtraceProtect.m in Sources */,
 				E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
