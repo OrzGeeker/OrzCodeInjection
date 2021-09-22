@@ -7,7 +7,8 @@
 
 #import "OrzCodeInjection.h"
 #import <objc/runtime.h>
-#import "PtraceProtect.h"
+#import "OrzPtraceProtect.h"
+#import "OrzFishHook.h"
 
 @implementation OrzCodeInjection
 + (void)load {
@@ -16,7 +17,11 @@
         [self showFLEX];
     });
     
-    [PtraceProtect enableSimplePtraceDenyAttach];
+    // hook ptrace系统调用，绕过ptrace防护
+    [OrzFishHook hookPtraceSystemCall];
+    
+    // 拒绝进程被调试器附着
+    [OrzPtraceProtect enableSimplePtraceDenyAttach];
 }
 
 + (void)showFLEX {

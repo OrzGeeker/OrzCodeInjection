@@ -1,5 +1,5 @@
 //
-//  PtraceProtect.h
+//  OrzPtraceProtect.h
 //  OrzHook
 //
 //  Created by wangzhizhou on 2021/9/19.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PtraceProtect : NSObject
+@interface OrzPtraceProtect : NSObject
 
 /// 简单调用系统ptrace接口，拒绝应用通debugServer被调试
 + (void)enableSimplePtraceDenyAttach;
