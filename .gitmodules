@@ -10,3 +10,6 @@
 [submodule "tools/Clutch"]
 	path = tools/Clutch
 	url = https://github.com/KJCracks/Clutch.git
+[submodule "tools/dumpdecrypted"]
+	path = tools/dumpdecrypted
+	url = https://github.com/stefanesser/dumpdecrypted.git
