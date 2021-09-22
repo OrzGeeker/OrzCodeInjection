@@ -7,3 +7,6 @@
 [submodule "tools/class-dump"]
 	path = tools/class-dump
 	url = https://github.com/nygard/class-dump.git
+[submodule "tools/Clutch"]
+	path = tools/Clutch
+	url = https://github.com/KJCracks/Clutch.git
