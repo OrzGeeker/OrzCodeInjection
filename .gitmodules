@@ -4,3 +4,6 @@
 [submodule "tools/fishhook"]
 	path = tools/fishhook
 	url = https://github.com/facebook/fishhook.git
+[submodule "tools/class-dump"]
+	path = tools/class-dump
+	url = https://github.com/nygard/class-dump.git
