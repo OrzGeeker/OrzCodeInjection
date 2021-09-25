@@ -56,6 +56,13 @@ TARGET_DISPLAY_NAME=$($PLIST_TOOL_BIN -c "Print CFBundleDisplayName"  "$TARGET_A
 TARGET_DISPLAY_NAME="$DUMMY_DISPLAY_NAME$TARGET_DISPLAY_NAME"
 $PLIST_TOOL_BIN -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
 
+# 设置支持安装的设备类型
+support_devices=("iPhone12,5" "iPhone12,3" "iPhone12,1" "iPhone11,8" "iPhone11,6" "iPhone11,4" "iPhone11,2" "iPhone10,6" "iPhone10,5" "iPhone10,4" "iPhone10,3" "iPhone10,1" "iPhone10,4" "iPhone6,1" "iPhone6,2" "iPhone7,2" "iPhone8,1" "iPhone8,4" "iPhone9,1" "iPhone9,3" "iPod7,1")
+for device in ${support_devices[@]}
+do
+$PLIST_TOOL_BIN -c "Add :UISupportedDevices: string $device" "$TARGET_APP_PATH/Info.plist"
+done
+
 # 给可执行文件上权限
 # 找到第三方app包里的可执行文件名称，因为Info.plist的 CFBundleExecutable 对应的是可执行文件的名称
 APP_BINARY=$($PLIST_TOOL_BIN -c "Print CFBundleExecutable"  "${TARGET_APP_PATH}/Info.plist")
