@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 
+extern BOOL isStopRecordSymbols;
+
 @interface ViewController ()
 
 @end
@@ -18,5 +20,9 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    isStopRecordSymbols = YES;
+    [super viewDidLoad];
+}
 
 @end

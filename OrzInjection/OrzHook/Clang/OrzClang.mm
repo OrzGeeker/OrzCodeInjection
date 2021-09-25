@@ -12,6 +12,8 @@
 #import <Foundation/Foundation.h>
 #import <dlfcn.h>
 
+BOOL isStopRecordSymbols = NO;
+
 static NSMutableArray<NSString *> *symbols = nil;
 
 extern "C" void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
@@ -25,16 +27,21 @@ extern "C" void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
 
 extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     if (!*guard) return;  // Duplicate the guard check.
+    if (isStopRecordSymbols) {
+        NSLog(@"%@", symbols);
+        return;
+    }
     
     void *PC = __builtin_return_address(0);
     Dl_info info;
     dladdr(PC, &info);
     NSString *symbol = [NSString stringWithUTF8String:info.dli_sname];
+    
     if(!symbols) {
         symbols = [NSMutableArray array];
     }
     if(![symbols containsObject:symbol]) {
         [symbols addObject:symbol];
-        NSLog(@"%@", symbol);
     }
+    
 }
