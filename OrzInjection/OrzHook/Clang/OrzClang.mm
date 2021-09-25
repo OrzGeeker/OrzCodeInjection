@@ -12,23 +12,21 @@
 #import <Foundation/Foundation.h>
 #import <dlfcn.h>
 
-BOOL isStopRecordSymbols = NO;
-
-static NSMutableArray<NSString *> *symbols = nil;
-
 extern "C" void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
                                                     uint32_t *stop) {
     static uint32_t N;  // Counter for the guards.
     if (start == stop || *start) return;  // Initialize only once.
-    NSLog(@"INIT: %p %p\n", start, stop);
+    // NSLog(@"INIT: %p %p\n", start, stop);
     for (uint32_t *x = start; x < stop; x++)
         *x = ++N;  // Guards should start from 1.
 }
 
 extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
+    static BOOL isStopRecordSymbols = NO;
+    static NSMutableArray<NSString *> *symbols = nil;
     if (!*guard) return;  // Duplicate the guard check.
     if (isStopRecordSymbols) {
-        NSLog(@"%@", symbols);
+        NSLog(@"OrzClang: 写入文件");
         return;
     }
     
@@ -47,5 +45,5 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     if([symbol containsString:@"viewDidAppear"]) {
         isStopRecordSymbols = YES;
     }
-    
+    NSLog(@"OrzClang: %@", symbol);
 }
