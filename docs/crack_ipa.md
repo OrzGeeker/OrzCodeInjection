@@ -51,7 +51,25 @@ cryptid 1
 
 2. 越狱手机上进行砸壳
 
-#### [Clutch](https://github.com/KJCracks/Clutch.git)
+#### [frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump.git)
+
+- 在越狱设备上打开Cydia，选择底部"软件源"，点击右上角"编辑"，点击左上角"添加"，输入frida软件源：https://build.frida.re
+，软件源添加完成后，进入对应的源，安装frida
+- 在Mac上安装usbmuxd: `brew install usbmuxd`
+- 在Mac上安装frida:
+```
+git clone https://github.com/AloneMonkey/frida-ios-dump.git
+cd frida-ios-dump
+sudo python3 -m pip install -r requirements.txt --upgrade
+iproxy 2222 22
+# 新建一个终端，运行下面命令
+python3 dump.py -l # 注意不要连接多个设备，只连接越狱设备，这个命令列出了所有可以砸壳的应用名称
+python3 dump.py 微信
+```
+
+
+
+#### ❌尝试后没有成功 [Clutch](https://github.com/KJCracks/Clutch.git) 系统版本高于iOS12不能使用
 
 有了越狱设备并行可以使用SSH远程登录越狱设备后，即可进行砸壳操作了
 
@@ -60,6 +78,7 @@ cryptid 1
 # cp /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ~/
 # sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:CODE_SIGNING_REQUIRED NO" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
 # sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
+# xcodebuild clean build
 # mkdir build
 # cd build
 # cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/iphoneos.toolchain.cmake ..
@@ -78,13 +97,14 @@ Installed apps:
 # clutch -d 2
 ```
 
-安装文件
-
-#### [dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git)
+#### ❌[dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git) 高版本无法处理
 
 ```bash
 git clone --depth=1 https://github.com/stefanesser/dumpdecrypted.git \
 cd dumpdecrypted \
 make
+scp dumpdecrypted.dylib root@192.168.0.107:~
+ps -A | grep .app
+DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/containers/Bundle/Application/D32367C3-3096-4505-9E4F-49A21DA77DA3/Lark.app/Lark
 ```
 

@@ -22,14 +22,14 @@ unzip -oqq "$TARGET_IPA_PATH" -d "$TEMP_PATH"
 # 拿到解压的临时APP的路径
 TEMP_APP_PATH=$(set -- "$TEMP_PATH/Payload/"*.app;echo "$1")
 # 这里显示打印一下 TEMP_APP_PATH变量
-echo "TEMP_APP_PATH: $TEMP_APP_PATH"
+echo "✅ TEMP_APP_PATH: $TEMP_APP_PATH"
 
 # -------------------------------------
 # 把解压出来的.app拷贝进去
 # BUILT_PRODUCTS_DIR 工程生成的APP包路径
 # TARGET_NAME target名称
 TARGET_APP_PATH="$BUILT_PRODUCTS_DIR/$TARGET_NAME.app"
-echo "TARGET_APP_PATH: $TARGET_APP_PATH"
+echo "✅ TARGET_APP_PATH: $TARGET_APP_PATH"
 
 rm -rf "$TARGET_APP_PATH"
 mkdir -p "$TARGET_APP_PATH"
@@ -38,9 +38,10 @@ cp -rf "$TEMP_APP_PATH/" "$TARGET_APP_PATH/"
 # -------------------------------------
 # 为了是重签过程简化，移走extension和watchAPP. 此外个人免费的证书没办法签extension
 
-echo "Removing AppExtensions"
+echo "✅ Removing AppExtensions"
 rm -rf "$TARGET_APP_PATH/PlugIns"
 rm -rf "$TARGET_APP_PATH/Watch"
+find "$TARGET_APP_PATH" -type dir -name "com.*" | xargs -I {} rm -rf {}
 
 # -------------------------------------
 # 更新 Info.plist 里的BundleId
@@ -91,16 +92,14 @@ then
 #遍历出所有动态库的路径
     for FRAMEWORK in "$TARGET_APP_FRAMEWORKS_PATH/"*
     do
-        echo "🍺🍺🍺🍺🍺🍺FRAMEWORK : $FRAMEWORK"
+        echo "🍺 FRAMEWORK : $FRAMEWORK"
         #签名
         /usr/bin/codesign --force --sign "$EXPANDED_CODE_SIGN_IDENTITY" "$FRAMEWORK"
     done
 fi
 
 if [ $? -eq 0 ]; then
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
-    echo "✅ App Code Sign Completed  ✅"
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+    echo "✅ App Code Sign Completed"
 fi
 
 
@@ -115,7 +114,5 @@ cd "$IPA_PRODUCT_PATH"
 zip -qr "${TARGET_DISPLAY_NAME}.ipa" "Payload/"
 rm -rf "$IPA_PRODUCT_PAYLOAD_PATH"
 if [ $? -eq 0 ]; then
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
-    echo "✅      IPA Created!!       ✅"
-    echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
+    echo "✅✅✅✅ IPA Created!! ✅✅✅✅"
 fi

@@ -12,7 +12,6 @@
 
 @implementation OrzCodeInjection
 + (void)load {
-    NSLog(@"JOKER: 注入成功");
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self showFLEX];
     });
@@ -30,6 +29,9 @@
     SEL selector1 = NSSelectorFromString(@"sharedManager");
     IMP imp1 = [FLEX methodForSelector:selector1];
     id (*func1)(id, SEL) = (void *)imp1;
+    if(func1 == NULL) {
+        return;
+    }
     id sharedInstance = func1(FLEX, selector1);
     
     // 执行: [[FLEXManager sharedManager] showExplorer]

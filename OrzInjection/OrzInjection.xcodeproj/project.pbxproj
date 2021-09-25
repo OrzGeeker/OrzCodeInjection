@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E212376626F3B4A600506A34 /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; };
+		E238ACBA26FF42D600F6532E /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; platformFilter = ios; };
+		E238ACBB26FF42D600F6532E /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E26AF32E26EE448200B754FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF32D26EE448200B754FD /* AppDelegate.m */; };
 		E26AF33126EE448200B754FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33026EE448200B754FD /* SceneDelegate.m */; };
 		E26AF33426EE448200B754FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33326EE448200B754FD /* ViewController.m */; };
@@ -28,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E212376826F3B4A600506A34 /* PBXContainerItemProxy */ = {
+		E238ACBC26FF42D600F6532E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E26AF32126EE448100B754FD /* Project object */;
 			proxyType = 1;
@@ -37,14 +38,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E238ACBE26FF42D600F6532E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E238ACBB26FF42D600F6532E /* OrzHook.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E22C8DCC26EF0B85005BA9E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ipa_resign.md; sourceTree = "<group>"; };
 		E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = get_ipa.md; sourceTree = "<group>"; };
 		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
 		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
+		E238ACB226FF2AEA00F6532E /* 3贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3贝壳2.64.2.ipa"; sourceTree = "<group>"; };
+		E238ACB326FF2AEA00F6532E /* 1developer.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1developer.ipa; sourceTree = "<group>"; };
 		E24DE79E26FB37770010CB2C /* reverse_tools */ = {isa = PBXFileReference; lastKnownFileType = text; path = reverse_tools; sourceTree = "<group>"; };
-		E24DE79F26FB3BAC0010CB2C /* 1贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1贝壳2.64.2.ipa"; sourceTree = "<group>"; };
 		E24DE7A026FB3BAC0010CB2C /* 2贝壳B端.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2贝壳B端.ipa"; sourceTree = "<group>"; };
 		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E212376626F3B4A600506A34 /* OrzHook.framework in Frameworks */,
+				E238ACBA26FF42D600F6532E /* OrzHook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +219,8 @@
 		E26AF37F26EE7BEF00B754FD /* APP-decrypted */ = {
 			isa = PBXGroup;
 			children = (
-				E24DE79F26FB3BAC0010CB2C /* 1贝壳2.64.2.ipa */,
+				E238ACB326FF2AEA00F6532E /* 1developer.ipa */,
+				E238ACB226FF2AEA00F6532E /* 3贝壳2.64.2.ipa */,
 				E24DE7A026FB3BAC0010CB2C /* 2贝壳B端.ipa */,
 			);
 			path = "APP-decrypted";
@@ -272,12 +289,13 @@
 				E26AF32526EE448200B754FD /* Sources */,
 				E26AF32626EE448200B754FD /* Frameworks */,
 				E26AF32726EE448200B754FD /* Resources */,
+				E238ACBE26FF42D600F6532E /* Embed Frameworks */,
 				E26AF34526EE453500B754FD /* App Code Sign Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E212376926F3B4A600506A34 /* PBXTargetDependency */,
+				E238ACBD26FF42D600F6532E /* PBXTargetDependency */,
 			);
 			name = OrzInjection;
 			productName = OrzInjection;
@@ -308,7 +326,7 @@
 		E26AF32126EE448100B754FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					E26AF32826EE448200B754FD = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -404,10 +422,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E212376926F3B4A600506A34 /* PBXTargetDependency */ = {
+		E238ACBD26FF42D600F6532E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = E26AF35726EE63EE00B754FD /* OrzHook */;
-			targetProxy = E212376826F3B4A600506A34 /* PBXContainerItemProxy */;
+			targetProxy = E238ACBC26FF42D600F6532E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -482,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -535,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -556,7 +575,7 @@
 					"$(PROJECT_DIR)/Frameworks-inject",
 				);
 				INFOPLIST_FILE = OrzInjection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +600,7 @@
 					"$(PROJECT_DIR)/Frameworks-inject",
 				);
 				INFOPLIST_FILE = OrzInjection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,14 +618,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 7HSS6X2323;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OrzHook/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -628,14 +647,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 7HSS6X2323;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OrzHook/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
