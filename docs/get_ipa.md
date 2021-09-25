@@ -1,4 +1,4 @@
-# 从`App Store`获取三方ipa安装包
+# 从`App Store`获取三方ipa安装包的方法
 
 - Mac上通过`Apple Configurator`下载iPA
 - 下载后，进行临时目录导出ipa：

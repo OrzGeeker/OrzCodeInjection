@@ -51,7 +51,7 @@ cryptid 1
 
 2. 越狱手机上进行砸壳
 
-#### [frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump.git)
+#### ✅[frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump.git)，经测试可行
 
 - 在越狱设备上打开Cydia，选择底部"软件源"，点击右上角"编辑"，点击左上角"添加"，输入frida软件源：https://build.frida.re
 ，软件源添加完成后，进入对应的源，安装frida
@@ -61,12 +61,11 @@ cryptid 1
 git clone https://github.com/AloneMonkey/frida-ios-dump.git
 cd frida-ios-dump
 sudo python3 -m pip install -r requirements.txt --upgrade
-iproxy 2222 22
+iproxy 2222 22 # 通过USB代理端口给SSH使用
 # 新建一个终端，运行下面命令
 python3 dump.py -l # 注意不要连接多个设备，只连接越狱设备，这个命令列出了所有可以砸壳的应用名称
 python3 dump.py 微信
 ```
-
 
 
 #### ❌尝试后没有成功 [Clutch](https://github.com/KJCracks/Clutch.git) 系统版本高于iOS12不能使用
