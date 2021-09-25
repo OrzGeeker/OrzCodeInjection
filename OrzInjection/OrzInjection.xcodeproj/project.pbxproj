@@ -44,6 +44,8 @@
 		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
 		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
 		E24DE79E26FB37770010CB2C /* reverse_tools */ = {isa = PBXFileReference; lastKnownFileType = text; path = reverse_tools; sourceTree = "<group>"; };
+		E24DE79F26FB3BAC0010CB2C /* 1贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1贝壳2.64.2.ipa"; sourceTree = "<group>"; };
+		E24DE7A026FB3BAC0010CB2C /* 2贝壳B端.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2贝壳B端.ipa"; sourceTree = "<group>"; };
 		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF32C26EE448200B754FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = AppCodeSign.sh; path = ../AppCodeSign.sh; sourceTree = "<group>"; };
 		E26AF37D26EE7BDE00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
 		E26AF37E26EE7BDE00B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LookinServer.framework; sourceTree = "<group>"; };
-		E2B380A726F0686B00CC1EF8 /* 贝壳2.64.2.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "贝壳2.64.2.ipa"; sourceTree = "<group>"; };
 		E2B8425826F72201003F5528 /* ptrace_crack.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ptrace_crack.md; sourceTree = "<group>"; };
 		E2B8427A26F72412003F5528 /* PtraceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PtraceHeader.h; sourceTree = "<group>"; };
 		E2B8427C26F727A7003F5528 /* OrzPtraceProtect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzPtraceProtect.h; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		E2B8428626F72B38003F5528 /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		E2B8428926F72C58003F5528 /* OrzFishHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzFishHook.h; sourceTree = "<group>"; };
 		E2B8428A26F72C58003F5528 /* OrzFishHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzFishHook.m; sourceTree = "<group>"; };
+		E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "checkra1n beta 0.12.4.dmg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		E253CFA826F3A39400A61537 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */,
 				E253CFA926F3A39400A61537 /* yololib */,
 			);
 			path = Tools;
@@ -200,7 +203,8 @@
 		E26AF37F26EE7BEF00B754FD /* APP-decrypted */ = {
 			isa = PBXGroup;
 			children = (
-				E2B380A726F0686B00CC1EF8 /* 贝壳2.64.2.ipa */,
+				E24DE79F26FB3BAC0010CB2C /* 1贝壳2.64.2.ipa */,
+				E24DE7A026FB3BAC0010CB2C /* 2贝壳B端.ipa */,
 			);
 			path = "APP-decrypted";
 			sourceTree = "<group>";
