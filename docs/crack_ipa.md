@@ -51,6 +51,35 @@ cryptid 1
 
 2. 越狱手机上进行砸壳
 
+#### [Clutch](https://github.com/KJCracks/Clutch.git)
+
+有了越狱设备并行可以使用SSH远程登录越狱设备后，即可进行砸壳操作了
+
+```bash
+# killall Xcode
+# cp /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ~/
+# sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:CODE_SIGNING_REQUIRED NO" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
+# sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
+# mkdir build
+# cd build
+# cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/iphoneos.toolchain.cmake ..
+# make -j$(sysctl -n hw.logicalcpu)
+# cd build
+# scp Clutch root@192.168.0.107:/usr/bin/clutch
+# ssh root@192.168.0.107
+# chmod +x /usr/bin/clutch
+# ulimit -n 2048
+# clutch -i
+Installed apps:
+1:   飞书 - 高效愉悦的办公平台 <com.bytedance.ee.lark>
+2:   微信 <com.tencent.xin>
+3:   贝壳找房 <com.joker.OrzInjection>
+4:   健康山西 <ShanXiGuaHao.com>
+# clutch -d 2
+```
+
+安装文件
+
 #### [dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git)
 
 ```bash
@@ -58,4 +87,4 @@ git clone --depth=1 https://github.com/stefanesser/dumpdecrypted.git \
 cd dumpdecrypted \
 make
 ```
-#### [Clutch](https://github.com/KJCracks/Clutch.git)
+
