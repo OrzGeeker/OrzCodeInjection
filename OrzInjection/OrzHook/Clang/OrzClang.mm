@@ -43,5 +43,9 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     if(![symbols containsObject:symbol]) {
         [symbols addObject:symbol];
     }
+    // 首屏渲染完成时刻
+    if([symbol containsString:@"viewDidAppear"]) {
+        isStopRecordSymbols = YES;
+    }
     
 }
