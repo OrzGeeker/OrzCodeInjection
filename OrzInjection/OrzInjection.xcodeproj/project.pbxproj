@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E238ACBA26FF42D600F6532E /* OrzHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; platformFilter = ios; };
 		E238ACBB26FF42D600F6532E /* OrzHook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E26AF35826EE63EE00B754FD /* OrzHook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E238ACC226FF74E400F6532E /* OrzClang.h in Headers */ = {isa = PBXBuildFile; fileRef = E238ACC026FF74E400F6532E /* OrzClang.h */; };
+		E238ACC326FF74E400F6532E /* OrzClang.m in Sources */ = {isa = PBXBuildFile; fileRef = E238ACC126FF74E400F6532E /* OrzClang.m */; };
+		E23BDE9C26FF7758000DD53B /* trace-pc-guard-cb.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23BDE9926FF7635000DD53B /* trace-pc-guard-cb.mm */; };
 		E26AF32E26EE448200B754FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF32D26EE448200B754FD /* AppDelegate.m */; };
 		E26AF33126EE448200B754FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33026EE448200B754FD /* SceneDelegate.m */; };
 		E26AF33426EE448200B754FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AF33326EE448200B754FD /* ViewController.m */; };
@@ -58,6 +61,9 @@
 		E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = get_ipa.md; sourceTree = "<group>"; };
 		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
 		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
+		E238ACC026FF74E400F6532E /* OrzClang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzClang.h; sourceTree = "<group>"; };
+		E238ACC126FF74E400F6532E /* OrzClang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzClang.m; sourceTree = "<group>"; };
+		E23BDE9926FF7635000DD53B /* trace-pc-guard-cb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "trace-pc-guard-cb.mm"; sourceTree = "<group>"; };
 		E24DE79E26FB37770010CB2C /* reverse_tools */ = {isa = PBXFileReference; lastKnownFileType = text; path = reverse_tools; sourceTree = "<group>"; };
 		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,16 @@
 			path = ../docs;
 			sourceTree = "<group>";
 		};
+		E238ACBF26FF73F900F6532E /* Clang */ = {
+			isa = PBXGroup;
+			children = (
+				E23BDE9926FF7635000DD53B /* trace-pc-guard-cb.mm */,
+				E238ACC026FF74E400F6532E /* OrzClang.h */,
+				E238ACC126FF74E400F6532E /* OrzClang.m */,
+			);
+			path = Clang;
+			sourceTree = "<group>";
+		};
 		E253CFA826F3A39400A61537 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +210,7 @@
 		E26AF35926EE63EE00B754FD /* OrzHook */ = {
 			isa = PBXGroup;
 			children = (
+				E238ACBF26FF73F900F6532E /* Clang */,
 				E2B8428426F72B38003F5528 /* Fishhook */,
 				E2B8427926F723FD003F5528 /* ptrace */,
 				E26AF35A26EE63EE00B754FD /* OrzHook.h */,
@@ -265,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */,
+				E238ACC226FF74E400F6532E /* OrzClang.h in Headers */,
 				E2B8427E26F727A7003F5528 /* OrzPtraceProtect.h in Headers */,
 				E2B8427B26F72503003F5528 /* PtraceHeader.h in Headers */,
 				E2B8428B26F72C58003F5528 /* OrzFishHook.h in Headers */,
@@ -386,7 +404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../AppCodeSign.sh\n";
+			shellScript = "# ../AppCodeSign.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -406,10 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E238ACC326FF74E400F6532E /* OrzClang.m in Sources */,
 				E2B8428C26F72C58003F5528 /* OrzFishHook.m in Sources */,
 				E2B8427F26F727A7003F5528 /* OrzPtraceProtect.m in Sources */,
 				E2B8428E26F730DA003F5528 /* fishhook.c in Sources */,
 				E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */,
+				E23BDE9C26FF7758000DD53B /* trace-pc-guard-cb.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -599,6 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -625,6 +647,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-fsanitize-coverage=trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzHook;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -654,6 +677,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-fsanitize-coverage=trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzHook;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
