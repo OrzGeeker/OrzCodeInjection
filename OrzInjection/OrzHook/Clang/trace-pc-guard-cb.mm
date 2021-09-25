@@ -5,6 +5,7 @@
 //  Created by wangzhizhou on 2021/9/25.
 //
 
+// Clang插桩文档参考: https://clang.llvm.org/docs/SanitizerCoverage.html#tracing-pcs-with-guards
 // OTHER_CFLAGS中添加: -fsanitize-coverage=trace-pc-guard
 
 // trace-pc-guard-cb.cc
