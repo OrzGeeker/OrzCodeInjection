@@ -114,5 +114,5 @@ cd "$IPA_PRODUCT_PATH"
 zip -qr "${TARGET_DISPLAY_NAME}.ipa" "Payload/"
 rm -rf "$IPA_PRODUCT_PAYLOAD_PATH"
 if [ $? -eq 0 ]; then
-    echo "✅✅✅✅ IPA Created!! ✅✅✅✅"
+    echo "✅ IPA Created!!"
 fi
