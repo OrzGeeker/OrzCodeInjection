@@ -67,43 +67,6 @@ python3 dump.py -l # 注意不要连接多个设备，只连接越狱设备，�
 python3 dump.py 微信
 ```
 
+#### 系统降级
 
-#### ❌尝试后没有成功 [Clutch](https://github.com/KJCracks/Clutch.git) 系统版本高于iOS12不能使用
-
-有了越狱设备并行可以使用SSH远程登录越狱设备后，即可进行砸壳操作了
-
-```bash
-# killall Xcode
-# cp /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ~/
-# sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:CODE_SIGNING_REQUIRED NO" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
-# sudo /usr/libexec/PlistBuddy -c "Set :DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
-# xcodebuild clean build
-# mkdir build
-# cd build
-# cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/iphoneos.toolchain.cmake ..
-# make -j$(sysctl -n hw.logicalcpu)
-# cd build
-# scp Clutch root@192.168.0.107:/usr/bin/clutch
-# ssh root@192.168.0.107
-# chmod +x /usr/bin/clutch
-# ulimit -n 2048
-# clutch -i
-Installed apps:
-1:   飞书 - 高效愉悦的办公平台 <com.bytedance.ee.lark>
-2:   微信 <com.tencent.xin>
-3:   贝壳找房 <com.joker.OrzInjection>
-4:   健康山西 <ShanXiGuaHao.com>
-# clutch -d 2
-```
-
-#### ❌[dumpdecrypted](https://github.com/stefanesser/dumpdecrypted.git) 高版本无法处理
-
-```bash
-git clone --depth=1 https://github.com/stefanesser/dumpdecrypted.git \
-cd dumpdecrypted \
-make
-scp dumpdecrypted.dylib root@192.168.0.107:~
-ps -A | grep .app
-DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/containers/Bundle/Application/D32367C3-3096-4505-9E4F-49A21DA77DA3/Lark.app/Lark
-```
-
+如果一不小心升级到了最新系统，可以使用[爱思肋手](https://www.i4.cn/pros.html)进行系统降级，也可以直接使用这个工具进行设备越狱
