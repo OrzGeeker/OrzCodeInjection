@@ -25,8 +25,9 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     static BOOL isStopRecordSymbols = NO;
     static NSMutableArray<NSString *> *symbols = nil;
     if (!*guard) return;  // Duplicate the guard check.
-    if (isStopRecordSymbols) {
+    if (isStopRecordSymbols && symbols.count > 0) {
         NSLog(@"OrzClang: 写入文件");
+        symbols = nil;
         return;
     }
     
