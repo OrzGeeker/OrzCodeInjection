@@ -27,7 +27,6 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     static NSMutableArray<NSString *> *symbols = nil;
     if (!*guard) return;  // Duplicate the guard check.
     if (isStopRecordSymbols) {
-        NSLog(@"OrzClang: 写入文件");
         return;
     }
     
@@ -42,11 +41,20 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     if(![symbols containsObject:symbol]) {
         [symbols addObject:symbol];
     }
+    
+    NSLog(@"OrzClang: %@", symbol);
+    
     // 首屏渲染完成时刻
     if([symbol containsString:@"viewDidAppear"]) {
         isStopRecordSymbols = YES;
+        NSString *orderFile = @"order.txt";
+        NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+        NSString *orderFilePath = [docDir stringByAppendingPathComponent:orderFile];
+        NSString *orderFileContent = [symbols componentsJoinedByString:@"\n"];
+        NSError *error = nil;
+        [orderFileContent writeToFile:orderFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        NSLog(@"OrzClang: 写入文件(%@)", !error ? @"成功" : @"失败");
     }
-    NSLog(@"OrzClang: %@", symbol);
 }
 
 #endif

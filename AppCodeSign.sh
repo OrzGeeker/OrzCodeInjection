@@ -35,6 +35,9 @@ rm -rf "$TARGET_APP_PATH"
 mkdir -p "$TARGET_APP_PATH"
 cp -rf "$TEMP_APP_PATH/" "$TARGET_APP_PATH/"
 
+# 拷完后，销毁临时目录
+rm -rf $TEMP_PATH
+
 # -------------------------------------
 # 为了是重签过程简化，移走extension和watchAPP. 此外个人免费的证书没办法签extension
 
