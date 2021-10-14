@@ -60,7 +60,6 @@
 		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
 		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
 		E23BDEA326FF95D7000DD53B /* OrzClang.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OrzClang.mm; sourceTree = "<group>"; };
-		E24DE79E26FB37770010CB2C /* reverse_tools */ = {isa = PBXFileReference; lastKnownFileType = text; path = reverse_tools; sourceTree = "<group>"; };
 		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF32C26EE448200B754FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +89,8 @@
 		E2B8428626F72B38003F5528 /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		E2B8428926F72C58003F5528 /* OrzFishHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzFishHook.h; sourceTree = "<group>"; };
 		E2B8428A26F72C58003F5528 /* OrzFishHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzFishHook.m; sourceTree = "<group>"; };
+		E2BBBA5A2705AFB9000EE535 /* jailbreak_device_usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = jailbreak_device_usage.md; sourceTree = "<group>"; };
+		E2BBBA5B2705AFDC000EE535 /* reverse_tools.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = reverse_tools.md; sourceTree = "<group>"; };
 		E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "checkra1n beta 0.12.4.dmg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,12 +130,13 @@
 		E22C8DCD26EF0BE2005BA9E6 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */,
-				E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */,
-				E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */,
 				E22C8DD126EF0BE2005BA9E6 /* code_injection.md */,
+				E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */,
+				E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */,
+				E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */,
+				E2BBBA5A2705AFB9000EE535 /* jailbreak_device_usage.md */,
 				E2B8425826F72201003F5528 /* ptrace_crack.md */,
-				E24DE79E26FB37770010CB2C /* reverse_tools */,
+				E2BBBA5B2705AFDC000EE535 /* reverse_tools.md */,
 			);
 			name = docs;
 			path = ../docs;
@@ -564,7 +566,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

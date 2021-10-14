@@ -8,6 +8,7 @@
 // Clang插桩文档参考: https://clang.llvm.org/docs/SanitizerCoverage.html#tracing-pcs-with-guards
 // 项目的OTHER_CFLAGS中添加: -fsanitize-coverage=trace-pc-guard 加这个标记遇到循环无法解决，需要改成: -fsanitize-coverage=func,trace-pc-guard
 
+#if DEBUG
 
 #import <Foundation/Foundation.h>
 #import <dlfcn.h>
@@ -47,3 +48,5 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     }
     NSLog(@"OrzClang: %@", symbol);
 }
+
+#endif
