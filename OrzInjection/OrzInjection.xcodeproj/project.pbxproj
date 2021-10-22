@@ -27,6 +27,8 @@
 		E2B8428C26F72C58003F5528 /* OrzFishHook.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B8428A26F72C58003F5528 /* OrzFishHook.m */; };
 		E2B8428D26F730DA003F5528 /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B8428626F72B38003F5528 /* fishhook.h */; };
 		E2B8428E26F730DA003F5528 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = E2B8428526F72B38003F5528 /* fishhook.c */; };
+		E2D66070271C59FE006BC21B /* OrzCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = E2D6606E271C59FE006BC21B /* OrzCrash.h */; };
+		E2D66071271C59FE006BC21B /* OrzCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D6606F271C59FE006BC21B /* OrzCrash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		E2B8428A26F72C58003F5528 /* OrzFishHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzFishHook.m; sourceTree = "<group>"; };
 		E2BBBA5A2705AFB9000EE535 /* jailbreak_device_usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = jailbreak_device_usage.md; sourceTree = "<group>"; };
 		E2BBBA5B2705AFDC000EE535 /* reverse_tools.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = reverse_tools.md; sourceTree = "<group>"; };
+		E2D6606E271C59FE006BC21B /* OrzCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzCrash.h; sourceTree = "<group>"; };
+		E2D6606F271C59FE006BC21B /* OrzCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzCrash.m; sourceTree = "<group>"; };
 		E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "checkra1n beta 0.12.4.dmg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,7 @@
 		E26AF35926EE63EE00B754FD /* OrzHook */ = {
 			isa = PBXGroup;
 			children = (
+				E2D6606D271C5983006BC21B /* Crash */,
 				E238ACBF26FF73F900F6532E /* Clang */,
 				E2B8428426F72B38003F5528 /* Fishhook */,
 				E2B8427926F723FD003F5528 /* ptrace */,
@@ -270,6 +275,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		E2D6606D271C5983006BC21B /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				E2D6606E271C59FE006BC21B /* OrzCrash.h */,
+				E2D6606F271C59FE006BC21B /* OrzCrash.m */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -280,6 +294,7 @@
 				E26AF35C26EE63EE00B754FD /* OrzHook.h in Headers */,
 				E2B8427E26F727A7003F5528 /* OrzPtraceProtect.h in Headers */,
 				E2B8427B26F72503003F5528 /* PtraceHeader.h in Headers */,
+				E2D66070271C59FE006BC21B /* OrzCrash.h in Headers */,
 				E2B8428B26F72C58003F5528 /* OrzFishHook.h in Headers */,
 				E26AF36926EE65FF00B754FD /* OrzCodeInjection.h in Headers */,
 				E2B8428D26F730DA003F5528 /* fishhook.h in Headers */,
@@ -424,6 +439,7 @@
 				E2B8427F26F727A7003F5528 /* OrzPtraceProtect.m in Sources */,
 				E2B8428E26F730DA003F5528 /* fishhook.c in Sources */,
 				E26AF36A26EE65FF00B754FD /* OrzCodeInjection.m in Sources */,
+				E2D66071271C59FE006BC21B /* OrzCrash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
