@@ -67,7 +67,12 @@ struct AppCodeSign {
         }
     }()
     
+    /// InfoPlist路径
     static private let productInfoPlistPath = "\(productAppDir)/Info.plist"
+    
+    
+    /// 代码签名实体
+    static private let productExpandedCodeSignIdentity = env["EXPANDED_CODE_SIGN_IDENTITY"]!
     
     static private var firstIPA = { () -> String? in
         guard let files = try? FileManager.default.contentsOfDirectory(atPath: assetsDir) else {
@@ -173,7 +178,11 @@ extension AppCodeSign {
     
     /// 对修改后的App进行签名
     static private func codeSignModifiedApp() {
-        
+        let productFrameworksDir = "\(productAppDir)/Frameworks"
+        try? FileManager.default.contentsOfDirectory(atPath: productInfoPlistPath).forEach { framework in
+            let frameworkPath = "\(productFrameworksDir)/\(framework)"
+            Shell.bashExec("/usr/bin/codesign --force --sign \(productExpandedCodeSignIdentity) \(frameworkPath)")
+        }
     }
     
     /// 创建重签名App进行分发
