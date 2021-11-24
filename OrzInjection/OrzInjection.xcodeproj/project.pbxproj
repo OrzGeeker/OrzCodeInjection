@@ -96,6 +96,7 @@
 		E2D6606E271C59FE006BC21B /* OrzCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzCrash.h; sourceTree = "<group>"; };
 		E2D6606F271C59FE006BC21B /* OrzCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzCrash.m; sourceTree = "<group>"; };
 		E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "checkra1n beta 0.12.4.dmg"; sourceTree = "<group>"; };
+		F39915E0274D474900FBC38C /* AppCodeSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeSign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +167,7 @@
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
+				F39915DF274D474900FBC38C /* scripts */,
 				E212376B26F3BDA700506A34 /* ipa-dist */,
 				E253CFA826F3A39400A61537 /* Tools */,
 				E22C8DCD26EF0BE2005BA9E6 /* docs */,
@@ -284,6 +286,14 @@
 			path = Crash;
 			sourceTree = "<group>";
 		};
+		F39915DF274D474900FBC38C /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F39915E0274D474900FBC38C /* AppCodeSign.swift */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -313,6 +323,7 @@
 				E26AF32726EE448200B754FD /* Resources */,
 				E238ACBE26FF42D600F6532E /* Embed Frameworks */,
 				E26AF34526EE453500B754FD /* App Code Sign Script */,
+				F39915E2274D494000FBC38C /* App Code Sign Swift Script */,
 			);
 			buildRules = (
 			);
@@ -414,7 +425,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../AppCodeSign.sh\n";
+			shellScript = "# ../AppCodeSign.sh\n";
+		};
+		F39915E2274D494000FBC38C /* App Code Sign Swift Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/scripts/AppCodeSign.swift",
+			);
+			name = "App Code Sign Swift Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n./AppCodeSign\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -531,6 +561,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -583,6 +614,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
