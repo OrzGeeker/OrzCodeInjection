@@ -425,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../AppCodeSign.sh\n";
+			shellScript = "# ../AppCodeSign.sh\n";
 		};
 		F39915E2274D494000FBC38C /* App Code Sign Swift Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -444,7 +444,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n# ./AppCodeSign\n";
+			shellScript = "xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n./AppCodeSign\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

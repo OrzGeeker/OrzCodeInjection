@@ -33,6 +33,9 @@ struct AppCodeSign {
     /// App的BundleID
     static private let productBundleId = env["PRODUCT_BUNDLE_IDENTIFIER"]!
     
+    /// 构建产物目录
+    static private let buildProductDir = env["BUILT_PRODUCTS_DIR"]!
+    
     /// 临时目录，用来暂时存放中间产物
     static private var tempDir = { () -> String in
         let path = "\(srcRootDir)/Temp"
@@ -42,7 +45,7 @@ struct AppCodeSign {
     
     /// 工程产物app目录
     static private var productAppDir = { () -> String in
-        let path = "\(env["BUILT_PRODUCTS_DIR"]!)/\(env["TARGET_NAME"]!).app"
+        let path = "\(buildProductDir)/\(env["TARGET_NAME"]!).app"
         makeEmptyDir(path)
         return path
     }()
@@ -74,6 +77,9 @@ struct AppCodeSign {
     /// 代码签名实体
     static private let productExpandedCodeSignIdentity = env["EXPANDED_CODE_SIGN_IDENTITY"]!
     
+    /// 产物Frameworks目录
+    static private let productFrameworksDir = "\(productAppDir)/Frameworks"
+    
     static private var firstIPA = { () -> String? in
         guard let files = try? FileManager.default.contentsOfDirectory(atPath: assetsDir) else {
             return nil
@@ -86,6 +92,9 @@ struct AppCodeSign {
         }
         return "\(assetsDir)/\(file)"
     }()
+    
+    /// 注入动态库及Frameworkds目录
+    static private let injectFrameworksDir = "\(srcRootDir)/Frameworks-inject"
 }
 
 // MARK: 重签名逻辑
@@ -170,17 +179,27 @@ extension AppCodeSign {
         }
     }
     
-    
     /// 注入动态库和Framework
     static private func injectDylibAndFramework() {
+        try? FileManager.default.contentsOfDirectory(atPath: injectFrameworksDir).filter { name in
+            if let ext = name.split(separator: ".").last, ext.lowercased() == "framework" {
+                return true
+            }
+            else {
+                return false
+            }
+        }.forEach { framework in
+            injectFramework(fromFrameworkDir: injectFrameworksDir, toFrameworkDir: productFrameworksDir, framework: framework)
+        }
         
+        injectFramework(fromFrameworkDir: buildProductDir, toFrameworkDir: productFrameworksDir, framework: "OrzHook.framework")
     }
     
     /// 对修改后的App进行签名
     static private func codeSignModifiedApp() {
-        let productFrameworksDir = "\(productAppDir)/Frameworks"
-        try? FileManager.default.contentsOfDirectory(atPath: productInfoPlistPath).forEach { framework in
+        try? FileManager.default.contentsOfDirectory(atPath: productFrameworksDir).forEach { framework in
             let frameworkPath = "\(productFrameworksDir)/\(framework)"
+            print(frameworkPath)
             Shell.bashExec("/usr/bin/codesign --force --sign \(productExpandedCodeSignIdentity) \(frameworkPath)")
         }
     }
@@ -209,6 +228,28 @@ extension AppCodeSign {
         }
         try? FileManager.default.removeItem(at: fileURL)
     }
+    
+    @discardableResult
+    static func yololibExec(_ args: [String]) -> String {
+        return Shell.exec(launchPath: "\(srcRootDir)/Tools/yololib", args: args)
+    }
+    
+    static var productAppBinaryName: String? {
+        get {
+            // 读取Info.plist文件内容
+            let infoPlistDict = NSMutableDictionary(contentsOfFile: productInfoPlistPath)
+            return infoPlistDict?["CFBundleExecutable"] as? String
+        }
+    }
+    
+    static func injectFramework(fromFrameworkDir: String,  toFrameworkDir:String, framework: String) {
+        let originFrameworkPath = "\(fromFrameworkDir)/\(framework)"
+        let targetFrameworkPath = "\(toFrameworkDir)/\(framework)"
+        Shell.bashExec("cp -rf \(originFrameworkPath.bashPath()) \(targetFrameworkPath.bashPath())")
+        if let appBinaryName = productAppBinaryName, let frameworkName = framework.split(separator: ".").first {
+            yololibExec(["\(productAppDir)/\(appBinaryName)","Frameworks/\(framework)/\(frameworkName)"])
+        }
+    }
 }
 
 extension String {
@@ -232,8 +273,8 @@ struct Shell {
     static func bashExec(_ commandLine: String) -> String {
         return exec(launchPath: "/usr/bin/env", args: ["bash", "-c", commandLine])
     }
-        
-    static private func exec(launchPath: String, args: [String]) -> String {
+    
+    static func exec(launchPath: String, args: [String]) -> String {
         let task = Process()
         task.launchPath = launchPath
         task.arguments = args
