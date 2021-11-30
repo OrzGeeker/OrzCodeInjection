@@ -21,10 +21,10 @@ extension AppCodeSign {
 @main
 struct AppCodeSign {
     
-    /// 环境变量
+    /// 工程构建环境变量
     static private let env = ProcessInfo.processInfo.environment
     
-    /// 工程源文件所在目录
+    /// 工程源文件所在根目录
     static private let srcRootDir = env["SRCROOT"]!
     
     /// 三方APP砸壳后的ipa包所在目录
@@ -33,10 +33,10 @@ struct AppCodeSign {
     /// App的BundleID
     static private let productBundleId = env["PRODUCT_BUNDLE_IDENTIFIER"]!
     
-    /// 构建产物目录
+    /// 工程构建产物目录
     static private let buildProductDir = env["BUILT_PRODUCTS_DIR"]!
     
-    /// 临时目录，用来暂时存放中间产物
+    /// 临时目录，用来暂时存放脱壳IPA包解压缩后的产物
     static private var tempDir = { () -> String in
         let path = "\(srcRootDir)/Temp"
         makeEmptyDir(path)
@@ -50,10 +50,14 @@ struct AppCodeSign {
         return path
     }()
     
+    
+    /// App的插件目录
     static private let productPluginDir = "\(productAppDir)/PlugIns"
     
+    /// App的iWatch扩展目录
     static private let productWatchAppDir = "\(productAppDir)/Watch"
     
+    /// App的其它扩展目录
     static private var productExtensionDirs = { () -> [String]? in
         
         guard let names = try? FileManager.default.contentsOfDirectory(atPath:productAppDir) else {
@@ -70,16 +74,16 @@ struct AppCodeSign {
         }
     }()
     
-    /// InfoPlist路径
+    /// App InfoPlist文件路径
     static private let productInfoPlistPath = "\(productAppDir)/Info.plist"
-    
     
     /// 代码签名实体
     static private let productExpandedCodeSignIdentity = env["EXPANDED_CODE_SIGN_IDENTITY"]!
     
-    /// 产物Frameworks目录
+    /// App的Frameworks目录
     static private let productFrameworksDir = "\(productAppDir)/Frameworks"
     
+    /// 获取一个脱壳IPA的路径
     static private var firstIPA = { () -> String? in
         guard let files = try? FileManager.default.contentsOfDirectory(atPath: assetsDir) else {
             return nil
@@ -95,6 +99,12 @@ struct AppCodeSign {
     
     /// 注入动态库及Frameworkds目录
     static private let injectFrameworksDir = "\(srcRootDir)/Frameworks-inject"
+    
+    /// 存放重签名IPA的目录
+    static private let distributeDir = "\(srcRootDir)/ipa-dist"
+    
+    /// Payload目录
+    static private let distributePayloadDir = "\(distributeDir)/Payload"
 }
 
 // MARK: 重签名逻辑
@@ -206,7 +216,15 @@ extension AppCodeSign {
     
     /// 创建重签名App进行分发
     static private func distributeApp() {
-        
+        makeEmptyDir(distributeDir)
+        makeEmptyDir(distributePayloadDir)
+        Shell.bashExec("cp -rf \(productAppDir.bashPath()) \(distributePayloadDir.bashPath())")
+        guard let productAppDisplayName = productAppDisplayName else {
+            print("productAppDisplayName not exist!!!")
+            return
+        }
+        Shell.bashExec("cd \(distributeDir.bashPath()) && zip -qr \(productAppDisplayName).ipa Payload/")
+        delDir(distributePayloadDir)
     }
 }
 
@@ -239,6 +257,14 @@ extension AppCodeSign {
             // 读取Info.plist文件内容
             let infoPlistDict = NSMutableDictionary(contentsOfFile: productInfoPlistPath)
             return infoPlistDict?["CFBundleExecutable"] as? String
+        }
+    }
+    
+    static var productAppDisplayName: String? {
+        get {
+            // 读取Info.plist文件内容
+            let infoPlistDict = NSMutableDictionary(contentsOfFile: productInfoPlistPath)
+            return infoPlistDict?["CFBundleDisplayName"] as? String
         }
     }
     
