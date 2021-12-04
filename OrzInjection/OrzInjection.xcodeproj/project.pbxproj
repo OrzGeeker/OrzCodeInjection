@@ -363,7 +363,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "language=\"oc\"\ncase $language in\n    swift)\n        xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n        ./AppCodeSign\n    ;;\n    bash)\n        $SCRIPT_INPUT_FILE_1\n    ;;\n    *)\n        echo 🔥🔥🔥🔥🔥\n    ;;\nesac\n";
+			shellScript = "language=\"swift\"\ncase $language in\n    swift)\n        xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o ${PROJECT_TEMP_DIR}/AppCodeSign\n        ${PROJECT_TEMP_DIR}/AppCodeSign\n    ;;\n    bash)\n        $SCRIPT_INPUT_FILE_1\n    ;;\n    *)\n        echo 🔥🔥🔥🔥🔥\n    ;;\nesac\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
