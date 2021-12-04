@@ -225,6 +225,7 @@ extension AppCodeSign {
         }
         Shell.bashExec("cd \(distributeDir.bashPath()) && zip -qr \(productAppDisplayName).ipa Payload/")
         delDir(distributePayloadDir)
+        Shell.bashExec("open \(distributeDir.bashPath())")
     }
 }
 

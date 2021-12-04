@@ -57,12 +57,13 @@
 
 /* Begin PBXFileReference section */
 		E22C8DCC26EF0B85005BA9E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ipa_resign.md; sourceTree = "<group>"; };
-		E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = get_ipa.md; sourceTree = "<group>"; };
-		E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = crack_ipa.md; sourceTree = "<group>"; };
-		E22C8DD126EF0BE2005BA9E6 /* code_injection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = code_injection.md; sourceTree = "<group>"; };
 		E23BDEA326FF95D7000DD53B /* OrzClang.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OrzClang.mm; sourceTree = "<group>"; };
-		E253CFA926F3A39400A61537 /* yololib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yololib; sourceTree = "<group>"; };
+		E2429A9C275BE76C0076FCE6 /* APP-decrypted */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "APP-decrypted"; sourceTree = "<group>"; };
+		E2429A9D275BE7970076FCE6 /* Frameworks-inject */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Frameworks-inject"; sourceTree = "<group>"; };
+		E2429A9E275BE7AF0076FCE6 /* ipa-dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "ipa-dist"; sourceTree = "<group>"; };
+		E2429A9F275BE7DE0076FCE6 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tools; sourceTree = "<group>"; };
+		E2429AA0275BE80D0076FCE6 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = docs; path = ../docs; sourceTree = "<group>"; };
+		E2429AA1275BE8280076FCE6 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		E26AF32926EE448200B754FD /* OrzInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AF32C26EE448200B754FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E26AF32D26EE448200B754FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,10 +81,6 @@
 		E26AF35B26EE63EE00B754FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26AF36726EE65FF00B754FD /* OrzCodeInjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzCodeInjection.h; sourceTree = "<group>"; };
 		E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzCodeInjection.m; sourceTree = "<group>"; };
-		E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = AppCodeSign.sh; path = ../AppCodeSign.sh; sourceTree = "<group>"; };
-		E26AF37D26EE7BDE00B754FD /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
-		E26AF37E26EE7BDE00B754FD /* LookinServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LookinServer.framework; sourceTree = "<group>"; };
-		E2B8425826F72201003F5528 /* ptrace_crack.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ptrace_crack.md; sourceTree = "<group>"; };
 		E2B8427A26F72412003F5528 /* PtraceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PtraceHeader.h; sourceTree = "<group>"; };
 		E2B8427C26F727A7003F5528 /* OrzPtraceProtect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzPtraceProtect.h; sourceTree = "<group>"; };
 		E2B8427D26F727A7003F5528 /* OrzPtraceProtect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzPtraceProtect.m; sourceTree = "<group>"; };
@@ -91,12 +88,8 @@
 		E2B8428626F72B38003F5528 /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		E2B8428926F72C58003F5528 /* OrzFishHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzFishHook.h; sourceTree = "<group>"; };
 		E2B8428A26F72C58003F5528 /* OrzFishHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzFishHook.m; sourceTree = "<group>"; };
-		E2BBBA5A2705AFB9000EE535 /* jailbreak_device_usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = jailbreak_device_usage.md; sourceTree = "<group>"; };
-		E2BBBA5B2705AFDC000EE535 /* reverse_tools.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = reverse_tools.md; sourceTree = "<group>"; };
 		E2D6606E271C59FE006BC21B /* OrzCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrzCrash.h; sourceTree = "<group>"; };
 		E2D6606F271C59FE006BC21B /* OrzCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrzCrash.m; sourceTree = "<group>"; };
-		E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "checkra1n beta 0.12.4.dmg"; sourceTree = "<group>"; };
-		F39915E0274D474900FBC38C /* AppCodeSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeSign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,28 +118,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E212376B26F3BDA700506A34 /* ipa-dist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "ipa-dist";
-			sourceTree = "<group>";
-		};
-		E22C8DCD26EF0BE2005BA9E6 /* docs */ = {
-			isa = PBXGroup;
-			children = (
-				E22C8DD126EF0BE2005BA9E6 /* code_injection.md */,
-				E22C8DD026EF0BE2005BA9E6 /* crack_ipa.md */,
-				E22C8DCF26EF0BE2005BA9E6 /* get_ipa.md */,
-				E22C8DCE26EF0BE2005BA9E6 /* ipa_resign.md */,
-				E2BBBA5A2705AFB9000EE535 /* jailbreak_device_usage.md */,
-				E2B8425826F72201003F5528 /* ptrace_crack.md */,
-				E2BBBA5B2705AFDC000EE535 /* reverse_tools.md */,
-			);
-			name = docs;
-			path = ../docs;
-			sourceTree = "<group>";
-		};
 		E238ACBF26FF73F900F6532E /* Clang */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,28 +126,18 @@
 			path = Clang;
 			sourceTree = "<group>";
 		};
-		E253CFA826F3A39400A61537 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				E2F757BA26FF120A006126E2 /* checkra1n beta 0.12.4.dmg */,
-				E253CFA926F3A39400A61537 /* yololib */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		E26AF32026EE448100B754FD = {
 			isa = PBXGroup;
 			children = (
-				F39915DF274D474900FBC38C /* scripts */,
-				E212376B26F3BDA700506A34 /* ipa-dist */,
-				E253CFA826F3A39400A61537 /* Tools */,
-				E22C8DCD26EF0BE2005BA9E6 /* docs */,
 				E22C8DCC26EF0B85005BA9E6 /* README.md */,
-				E26AF36D26EE6C3700B754FD /* AppCodeSign.sh */,
-				E26AF37F26EE7BEF00B754FD /* APP-decrypted */,
-				E26AF37C26EE7BDE00B754FD /* Frameworks-inject */,
-				E26AF35926EE63EE00B754FD /* OrzHook */,
 				E26AF32B26EE448200B754FD /* OrzInjection */,
+				E26AF35926EE63EE00B754FD /* OrzHook */,
+				E2429AA1275BE8280076FCE6 /* scripts */,
+				E2429AA0275BE80D0076FCE6 /* docs */,
+				E2429A9F275BE7DE0076FCE6 /* Tools */,
+				E2429A9E275BE7AF0076FCE6 /* ipa-dist */,
+				E2429A9D275BE7970076FCE6 /* Frameworks-inject */,
+				E2429A9C275BE76C0076FCE6 /* APP-decrypted */,
 				E26AF32A26EE448200B754FD /* Products */,
 				E212376526F3B4A600506A34 /* Frameworks */,
 			);
@@ -222,22 +183,6 @@
 				E26AF36826EE65FF00B754FD /* OrzCodeInjection.m */,
 			);
 			path = OrzHook;
-			sourceTree = "<group>";
-		};
-		E26AF37C26EE7BDE00B754FD /* Frameworks-inject */ = {
-			isa = PBXGroup;
-			children = (
-				E26AF37D26EE7BDE00B754FD /* FLEX.framework */,
-				E26AF37E26EE7BDE00B754FD /* LookinServer.framework */,
-			);
-			path = "Frameworks-inject";
-			sourceTree = "<group>";
-		};
-		E26AF37F26EE7BEF00B754FD /* APP-decrypted */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "APP-decrypted";
 			sourceTree = "<group>";
 		};
 		E2B8427926F723FD003F5528 /* ptrace */ = {
@@ -286,14 +231,6 @@
 			path = Crash;
 			sourceTree = "<group>";
 		};
-		F39915DF274D474900FBC38C /* scripts */ = {
-			isa = PBXGroup;
-			children = (
-				F39915E0274D474900FBC38C /* AppCodeSign.swift */,
-			);
-			path = scripts;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -322,8 +259,7 @@
 				E26AF32626EE448200B754FD /* Frameworks */,
 				E26AF32726EE448200B754FD /* Resources */,
 				E238ACBE26FF42D600F6532E /* Embed Frameworks */,
-				E26AF34526EE453500B754FD /* App Code Sign Script */,
-				F39915E2274D494000FBC38C /* App Code Sign Swift Script */,
+				F39915E2274D494000FBC38C /* App Code Sign Script */,
 			);
 			buildRules = (
 			);
@@ -409,25 +345,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E26AF34526EE453500B754FD /* App Code Sign Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "App Code Sign Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# ../AppCodeSign.sh\n";
-		};
-		F39915E2274D494000FBC38C /* App Code Sign Swift Script */ = {
+		F39915E2274D494000FBC38C /* App Code Sign Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,15 +354,16 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/scripts/AppCodeSign.swift",
+				"${SRCROOT}/scripts/AppCodeSign.sh",
 			);
-			name = "App Code Sign Swift Script";
+			name = "App Code Sign Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n./AppCodeSign\n";
+			shellScript = "language=\"oc\"\ncase $language in\n    swift)\n        xcrun -sdk macosx swiftc -parse-as-library $SCRIPT_INPUT_FILE_0 -o AppCodeSign\n        ./AppCodeSign\n    ;;\n    bash)\n        $SCRIPT_INPUT_FILE_1\n    ;;\n    *)\n        echo 🔥🔥🔥🔥🔥\n    ;;\nesac\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
