@@ -22,3 +22,9 @@
 [submodule "tools/restore-symbol"]
 	path = tools/restore-symbol
 	url = https://github.com/tobefuturer/restore-symbol.git
+[submodule "tools/MachOView"]
+	path = tools/MachOView
+	url = https://github.com/fangshufeng/MachOView.git
+[submodule "tools/IDA-Pro-7.0"]
+	path = tools/IDA-Pro-7.0
+	url = https://github.com/OrzGeeker/IDA-Pro-7.0.git
