@@ -19,3 +19,6 @@
 [submodule "tools/MonkeyDev"]
 	path = tools/MonkeyDev
 	url = https://github.com/AloneMonkey/MonkeyDev.git
+[submodule "tools/restore-symbol"]
+	path = tools/restore-symbol
+	url = https://github.com/tobefuturer/restore-symbol.git
